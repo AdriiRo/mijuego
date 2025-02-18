@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bxeghletvuiqk"]
+[gd_scene load_steps=24 format=3 uid="uid://bxeghletvuiqk"]
 
 [ext_resource type="Texture2D" uid="uid://bts3xnv3k77dr" path="res://player/img/Pink_Monster_Idle_4.png" id="1_qgo47"]
 [ext_resource type="Texture2D" uid="uid://bkp465llcskal" path="res://player/img/Pink_Monster_Jump_8.png" id="2_xk5gk"]
@@ -153,11 +153,18 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmt7f"]
+size = Vector2(22, 29)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="player" type="CharacterBody2D"]
+scale = Vector2(0.25, 0.25)
+metadata/_edit_group_ = true
+
+[node name="ani_player" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pp025")
 animation = &"run"
-frame_progress = 0.135771
+frame_progress = 0.420247
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="col_player" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_dmt7f")
