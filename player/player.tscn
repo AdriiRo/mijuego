@@ -162,9 +162,11 @@ metadata/_edit_group_ = true
 
 [node name="ani_player" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pp025")
-animation = &"run"
-frame_progress = 0.420247
+animation = &"jump"
+frame_progress = 0.668597
 
 [node name="col_player" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1.5)
 shape = SubResource("RectangleShape2D_dmt7f")
+
+[node name="cam_player" type="Camera2D" parent="."]
