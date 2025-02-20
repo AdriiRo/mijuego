@@ -99,7 +99,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 12.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -128,7 +128,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 12.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -151,7 +151,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 12.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmt7f"]
@@ -164,8 +164,7 @@ metadata/_edit_group_ = true
 
 [node name="ani_player" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pp025")
-animation = &"run"
-frame_progress = 0.930749
+animation = &"idle"
 
 [node name="col_player" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1.5)
