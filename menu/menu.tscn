@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3st2n75ua2t2"]
+
+[ext_resource type="AudioStream" uid="uid://b7flsspydgca6" path="res://menu/game.mp3" id="1_47lak"]
+[ext_resource type="Script" path="res://menu/menu.gd" id="1_ulhn8"]
+[ext_resource type="Texture2D" uid="uid://b788gbiqqlark" path="res://menu/menu_background.jpeg" id="2_56wwh"]
+[ext_resource type="FontFile" uid="uid://b1uy2ysx18f2w" path="res://menu/fuente.otf" id="4_263yd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nrahc"]
+font = ExtResource("4_263yd")
+font_size = 100
+outline_size = 20
+outline_color = Color(1.92523e-06, 0.451512, 0.676307, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ulhn8")
+
+[node name="audio_menu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_47lak")
+autoplay = true
+parameters/looping = true
+
+[node name="sprite_menu" type="Sprite2D" parent="."]
+scale = Vector2(1.80156, 1.8)
+texture = ExtResource("2_56wwh")
+centered = false
+
+[node name="vbox_menu" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 456.0
+offset_right = 125.0
+offset_bottom = 549.0
+scale = Vector2(1.76, 1.76)
+
+[node name="lbl_opciones" type="Label" parent="vbox_menu"]
+layout_mode = 2
+text = "Opciones"
+
+[node name="btn_start" type="Button" parent="vbox_menu"]
+layout_mode = 2
+text = "Start"
+
+[node name="btn_exit" type="Button" parent="vbox_menu"]
+layout_mode = 2
+text = "Exit
+"
+
+[node name="lbl_menu" type="Label" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 66.0
+offset_right = 335.0
+offset_bottom = 125.0
+text = "Space Jumping "
+label_settings = SubResource("LabelSettings_nrahc")
+
+[connection signal="pressed" from="vbox_menu/btn_start" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="vbox_menu/btn_exit" to="." method="_on_btn_end_pressed"]

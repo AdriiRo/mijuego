@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @export var gravity_scale = 2
-@export var speed = 500
-@export var acceleration = 600
+@export var speed = 300
+@export var acceleration = 400
 @export var friction = 1500
 @export var jump_force = -700
 @export var air_acceleration = 2000
