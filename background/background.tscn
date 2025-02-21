@@ -16,6 +16,12 @@ scale = Vector2(2.00174, 2.01852)
 texture = ExtResource("1_yrgc4")
 centered = false
 
+[node name="1" type="Sprite2D" parent="ParallaxLayer/1"]
+position = Vector2(-1, -218.477)
+scale = Vector2(2.00867, 2.68975)
+texture = ExtResource("1_yrgc4")
+centered = false
+
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(1152, 0)
 
