@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://bxeghletvuiqk"]
+[gd_scene load_steps=26 format=3 uid="uid://bxeghletvuiqk"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_01aqe"]
 [ext_resource type="Texture2D" uid="uid://bts3xnv3k77dr" path="res://player/img/Pink_Monster_Idle_4.png" id="1_qgo47"]
 [ext_resource type="Texture2D" uid="uid://bkp465llcskal" path="res://player/img/Pink_Monster_Jump_8.png" id="2_xk5gk"]
 [ext_resource type="Texture2D" uid="uid://c1ik7qq2e6evc" path="res://player/img/Pink_Monster_Run_6.png" id="3_5gvv2"]
+[ext_resource type="PackedScene" uid="uid://baso2tfteufhh" path="res://contador/contador.tscn" id="5_gkqdi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ke4n6"]
 atlas = ExtResource("1_qgo47")
@@ -171,3 +172,9 @@ position = Vector2(1, 1.5)
 shape = SubResource("RectangleShape2D_dmt7f")
 
 [node name="cam_player" type="Camera2D" parent="."]
+limit_left = 0
+limit_smoothed = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Contador" parent="CanvasLayer" instance=ExtResource("5_gkqdi")]

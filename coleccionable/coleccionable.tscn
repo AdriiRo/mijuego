@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://veoqyjdsmc1u"]
+
+[ext_resource type="Script" path="res://coleccionable/coleccionable.gd" id="1_svfu3"]
+[ext_resource type="Texture2D" uid="uid://brgvtj2i10oof" path="res://coleccionable/img/13.png" id="1_t2rtv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i45ws"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t2rtv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt7id"]
+size = Vector2(102, 105)
+
+[node name="coleccionable" type="Area2D"]
+script = ExtResource("1_svfu3")
+
+[node name="ani_cristal" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 15)
+scale = Vector2(0.430208, 0.430208)
+sprite_frames = SubResource("SpriteFrames_i45ws")
+
+[node name="col_cristal" type="CollisionShape2D" parent="."]
+position = Vector2(1, 12.5)
+shape = SubResource("RectangleShape2D_gt7id")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

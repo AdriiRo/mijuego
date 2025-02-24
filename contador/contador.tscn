@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://baso2tfteufhh"]
+
+[ext_resource type="Script" path="res://contador/contador.gd" id="1_7spji"]
+[ext_resource type="Texture2D" uid="uid://brgvtj2i10oof" path="res://coleccionable/img/13.png" id="2_qbux8"]
+
+[node name="Contador" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7spji")
+
+[node name="hbox" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 19.0
+offset_right = 101.0
+offset_bottom = 59.0
+
+[node name="lbl_contador" type="Label" parent="hbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="imagen" type="Sprite2D" parent="hbox"]
+position = Vector2(61, 23)
+scale = Vector2(0.133542, 0.133542)
+texture = ExtResource("2_qbux8")
