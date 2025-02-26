@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://dhu40j3kbcpgy"]
+[gd_scene load_steps=9 format=4 uid="uid://dhu40j3kbcpgy"]
 
 [ext_resource type="Texture2D" uid="uid://bo27ofjtgp6x6" path="res://environment/img/Tileset.png" id="1_wy2gt"]
 [ext_resource type="PackedScene" uid="uid://bxeghletvuiqk" path="res://player/player.tscn" id="2_0mgcf"]
 [ext_resource type="PackedScene" uid="uid://dcmge7we4gj8m" path="res://background/background.tscn" id="3_f7ndw"]
 [ext_resource type="PackedScene" uid="uid://veoqyjdsmc1u" path="res://coleccionable/coleccionable.tscn" id="4_5ia4v"]
 [ext_resource type="PackedScene" uid="uid://dxb8xih2tuk3n" path="res://ene_static/rocks.tscn" id="5_y470s"]
+[ext_resource type="PackedScene" uid="uid://bke3ljdhjf50n" path="res://ene_dyn/ene_dyn.tscn" id="6_sewm3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tt5p8"]
 texture = ExtResource("1_wy2gt")
@@ -391,3 +392,17 @@ scale = Vector2(0.76, 0.76)
 [node name="Rocks5" parent="rocks" instance=ExtResource("5_y470s")]
 position = Vector2(3446, 400)
 scale = Vector2(0.76, 0.76)
+
+[node name="aliens" type="Node2D" parent="."]
+
+[node name="EneDyn" parent="aliens" instance=ExtResource("6_sewm3")]
+position = Vector2(1057, 197)
+scale = Vector2(0.160002, 0.160002)
+
+[node name="EneDyn2" parent="aliens" instance=ExtResource("6_sewm3")]
+position = Vector2(1923, 454)
+scale = Vector2(0.160002, 0.160002)
+
+[node name="EneDyn3" parent="aliens" instance=ExtResource("6_sewm3")]
+position = Vector2(3141, 259)
+scale = Vector2(0.160002, 0.160002)
