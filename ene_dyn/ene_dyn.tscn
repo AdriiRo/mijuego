@@ -51,9 +51,9 @@ frame_progress = 0.107332
 position = Vector2(3, 7)
 shape = SubResource("RectangleShape2D_dgfph")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="ene_area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="col_ene_dyn_ataque" type="CollisionShape2D" parent="ene_area"]
 position = Vector2(4, 2)
 scale = Vector2(1.00559, 1)
 shape = SubResource("RectangleShape2D_0l67d")

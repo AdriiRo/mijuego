@@ -71,3 +71,12 @@ func _ready() -> void:
 func add_moneda():
 	monedas+=1
 	contador.actualizar(monedas)
+	
+func morir():
+		# desactivo las físicas
+	set_physics_process(false)
+	ani_player.play("muerte")
+	$audio_player.play()
+	$tiempo.start()
+	await $tiempo.timeout
+	get_tree().reload_current_scene()

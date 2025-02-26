@@ -34,3 +34,9 @@ func _physics_process(delta: float) -> void:
 
 	# Refrescamos el juego
 	move_and_slide()
+	
+	
+func _on_ene_area_body_entered(body: Node2D) -> void:
+	print("Colisión con: ", body.name)  # Depuración
+	if body.is_in_group("jugadores"):
+		body.morir()

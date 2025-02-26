@@ -1,10 +1,12 @@
-[gd_scene load_steps=26 format=3 uid="uid://bxeghletvuiqk"]
+[gd_scene load_steps=36 format=3 uid="uid://bxeghletvuiqk"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_01aqe"]
 [ext_resource type="Texture2D" uid="uid://bts3xnv3k77dr" path="res://player/img/Pink_Monster_Idle_4.png" id="1_qgo47"]
 [ext_resource type="Texture2D" uid="uid://bkp465llcskal" path="res://player/img/Pink_Monster_Jump_8.png" id="2_xk5gk"]
 [ext_resource type="Texture2D" uid="uid://c1ik7qq2e6evc" path="res://player/img/Pink_Monster_Run_6.png" id="3_5gvv2"]
+[ext_resource type="Texture2D" uid="uid://cvbcuu330vvlf" path="res://player/img/Pink_Monster_Death_8.png" id="4_53nms"]
 [ext_resource type="PackedScene" uid="uid://baso2tfteufhh" path="res://contador/contador.tscn" id="5_gkqdi"]
+[ext_resource type="AudioStream" uid="uid://bhbjqyl1lajh8" path="res://player/gameover_sound.mp3" id="7_qnqm5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ke4n6"]
 atlas = ExtResource("1_qgo47")
@@ -52,6 +54,38 @@ region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2os4g"]
 atlas = ExtResource("2_xk5gk")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0e6g"]
+atlas = ExtResource("4_53nms")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ny2hp"]
+atlas = ExtResource("4_53nms")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0gj5"]
+atlas = ExtResource("4_53nms")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3jpc"]
+atlas = ExtResource("4_53nms")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuhjv"]
+atlas = ExtResource("4_53nms")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sb5j"]
+atlas = ExtResource("4_53nms")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5l65"]
+atlas = ExtResource("4_53nms")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsjax"]
+atlas = ExtResource("4_53nms")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x80lo"]
@@ -133,6 +167,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_k0e6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ny2hp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0gj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3jpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuhjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sb5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5l65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsjax")
+}],
+"loop": false,
+"name": &"muerte",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_x80lo")
 }, {
 "duration": 1.0,
@@ -165,7 +228,9 @@ metadata/_edit_group_ = true
 
 [node name="ani_player" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pp025")
-animation = &"idle"
+animation = &"muerte"
+frame = 7
+frame_progress = 1.0
 
 [node name="col_player" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1.5)
@@ -178,3 +243,9 @@ limit_smoothed = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Contador" parent="CanvasLayer" instance=ExtResource("5_gkqdi")]
+
+[node name="tiempo" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="audio_player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_qnqm5")
